@@ -1,0 +1,41 @@
+@startuml Argsflix
+
+class App{
+    favoritter: dictionary
+    vis_bucket_list()
+    lagre_data()
+    slett_data()
+    kjør()
+}
+
+class Audiovisuelt_element{
+    navn: str
+    utgivelsesår: int
+    ratings: list
+    skuespillere: list
+    sjanger: list
+    plot: str
+    ID: int
+
+    utskrift(): def__str__
+    hent_data_tittel()
+    hent_data_ID()
+}
+
+
+class Film{
+
+}
+
+class Serie{
+    sesong: int
+    episode: int
+}
+
+Audiovisuelt_element <|-- Film
+Audiovisuelt_element <|-- Serie
+App *--right Audiovisuelt_element
+
+
+
+@enduml
